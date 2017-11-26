@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>_Aplicación encuesta-encuesta (prototipo 0)</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+ 
+    <script src="https://fb.me/react-0.13.3.min.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+
+</head>
+
+<body>
+  <h1> Aplicación encuesta-encuesta (prototipo 0)</h1>
+<h2><a href="https://willyregino.github.io/">Repositorio de los creadores &raquo;</a></h2> <br><br><br><br><br><br><br>
+<input type="text" size="15" maxlength="30" value="buscar" name="buscar">
+
+<section id="user">
+        
+    </section>
+
+    <script type="text/jsx">
+        var User = React.createClass({
+            getInitialState : function(){
+                return {
+                    username : "Nombre de usuario",
+                    avatar : "twitter.jpg",
+                    description : "Es muy costosa una carrera en la universidad privada?  "
+                }
+            },
+            changeUser : function(){
+                this.setState({
+                    username : "Nombre del usuario",
+                    avatar : "facebook.jpg",
+                    description : "Quien ganara el reinado miss universo 2017-2018 ?"
+                })
+            },
+
+
+            render : function(){
+                var image = "./images/"+this.state.avatar;
+                return (
+                    <article className="User" onClick={this.changeUser}>
+                        <img src={image} className="User-avatar" width="100"/>
+                        <div className="User-description">
+                            <p className="User-name">{this.state.username}</p>
+                            <p>{this.state.description}</p>
+                        </div>
+                    </article>
+                )
+            }
+        })
+        React.render( <User/>, document.getElementById('user'))
+    </script>
+
+
+<p class="note">Aplicación en desarrollo con fines académicos, específicamente en el estudio de la tecnología React.js </p>
+
+
+
+<div id="main">
+
+<ul id="navigationMenu">
+    <li>
+        <a class="home" href="#">
+            <span>Mi perfil</span>
+        </a>
+    </li>
+    
+    <li>
+        <a class="about" href="#">
+            <span>Nueva encuesta</span>
+        </a>
+    </li>
+    
+    <li>
+         <a class="services" href="#">
+            <span>Configuracion</span>
+         </a>
+    </li>
+    
+    <li>
+        <a class="portfolio" href="#">
+            <span>Encuestas guardadas</span>
+        </a>
+    </li>
+    
+    <li>
+        <a class="contact" href="#">
+            <span>Mensajes y amig@s </span>
+        </a>
+    </li>
+</ul>
+    
+</div>
+
+
+
+</body>
+</html>
+
